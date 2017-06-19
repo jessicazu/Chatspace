@@ -1,0 +1,210 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.chat{
+  height: 100%;
+  .sidebar {
+    height: 100vh;
+    background-color: $Deepblue1;
+    overflow-y: scroll;
+    padding-left: 15px;
+    &__user {
+      @include clearfix();
+      background-color: $Deepblue2;
+      color: $White;
+      padding: 42px 20px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      @media #{$xsmall} {
+        padding: 35px 10px;
+      }
+      &--name {
+        float: left;
+      }
+      &--btn {
+        float: right;
+        
+        a{
+          color: $White;
+          text-decoration-line: none;
+        }
+      }
+    }
+    &__groups-list {
+      padding: 20px;
+      color: $White;
+      @media #{$xsmall} {
+        padding: 20px 10px;
+      }
+      &__group {
+        &--name {
+          padding-bottom: 5px;
+          color: $White;
+          @media #{$xsmall} {
+            font-size: 12px;
+          }
+        }
+        &--newest-message {
+          font-size: 11px;
+          padding-bottom: 40px;
+          color: $White;
+          @media #{$xsmall} {
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .chat-main {
+    height: 100vh;
+    position: relative;
+    &__header {
+      @include clearfix();
+      width: 100%;
+      border-bottom: 1px solid $LightGray;
+      &__left {
+        float: left;
+        &--group {
+          padding: 35px 0 0 40px;
+          font-size: 20px;
+          color: $BlackGray;
+          @media #{$xsmall} {
+            padding: 25px 0 0 25px;
+            font-size: 17px;
+          }
+        }
+        &--member {
+          padding: 15px 0 0 40px;
+          font-size: 12px;
+          color: $Gray;
+          @media #{$xsmall} {
+            padding: 10px 0 0 25px;
+            font-size: 10px;
+          }
+        }
+      }
+      &__right {
+        font-size: 16px;
+        float: right;
+        color: $SkyBlue;
+        margin: 28px 40px;
+        border: 1px solid $SkyBlue;
+        padding: 12.5px 20px;
+        a {
+          color: $SkyBlue;
+        }
+        @media #{$xsmall} {
+          font-size: 12px;
+          padding: 9px 13px;
+        }
+      }
+    }
+
+    &__body {
+      padding: 6px 40px 0;
+      overflow-y: scroll;
+      max-height: calc( 100vh - 198px );
+      @media #{$xsmall} {
+        padding: 0 25px 0;
+        font-size: 11px;
+        max-height: calc( 100vh - 164px );
+      }
+      &__message {
+        @include clearfix();
+        padding-bottom: 40px;
+        @media #{$xsmall} {
+          padding-bottom: 20px;
+        }
+        &--name {
+          float: left;
+          font-size: 16px;
+          font-weight: bold;
+          color: $Black;
+          padding-right: 10px;
+          padding-top: 40px;
+          @media #{$xsmall} {
+            font-size: 15px;
+          }
+        }
+        &--time {
+          float: left;
+          font-size: 12px;
+          color: $Gray;
+          padding-top: 40px;
+          @media #{$xsmall} {
+            font-size: 11px;
+          }
+        }
+        &--content {
+          clear: both;
+          font-size: 14px;
+          color: $Black;
+          padding: 10px 0 0;
+          @media #{$xsmall} {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+
+    &__footer {
+      position: absolute;
+      bottom: 0;
+      background-color: $Gray;
+      width: 100%;
+      padding: 20px 0;
+      @media #{$xsmall} {
+        padding: 15px 0;
+        font-size: 11px;
+      }
+      &--form {
+        background-color: $White;
+        .js_send_form {
+          float: left;
+          font-size: 16px;
+          width: calc( 100% - 200px);
+          margin-left: 40px;
+          padding: 13px 10px;
+          @media #{$xsmall} {
+            width: calc( 100% - 140px);
+            margin-left: 20px;
+            padding: 9px 6px;
+            font-size: 13px;
+          }
+        }
+        .image {
+            position: absolute;
+            right: 175px;
+            top: 34px;
+            color: $Black;
+            @media #{$xsmall} {
+              right: 130px;
+              top: 27px;
+            }
+          }
+      }
+      &--btn {
+        .submit {
+          font-size: 16px;
+          float: right;
+          background-color: $SkyBlue;
+          color: $White;
+          width: 100px;
+          margin-right: 40px;
+          text-align: center;
+          padding: 13px 0;
+          @media #{$xsmall} {
+            width: 70px;
+            margin-right: 30px;
+            padding: 9px 0;
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+}

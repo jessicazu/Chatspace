@@ -1,0 +1,30 @@
+.chat.row
+  .sidebar.col-xs-4.col-sm-3
+    = render partial: "sidebar"
+
+  .chat-main.col-xs-8.col-sm-9
+    .chat-main__header
+      .chat-main__header__left
+        .chat-main__header__left--group
+          = @group.name
+        .chat-main__header__left--member
+          MEMBER:
+          = @group.users.pluck(:name).join(", ")
+      .chat-main__header__right
+        = link_to edit_group_path(@group) do
+          Edit
+
+    .chat-main__body
+      .chat-main__body__message
+        = render partial: "message", collection: @messages
+
+
+    .chat-main__footer
+      = form_for [@group, @message], class: 'js_send' do |f|
+        .chat-main__footer--form
+          = f.text_field :body, row: '1', placeholder: "type a message", class: 'js_send_form'
+          = f.label :image, class: 'image' do
+            %i.fa.fa-picture-o
+            = f.file_field :image, style: 'display: none'
+        .chat-main__footer--btn
+          = f.submit 'Send', class: 'submit'

@@ -1,0 +1,12 @@
+.chat.row
+  .sidebar.col-xs-4.col-sm-3
+    .sidebar__user
+      .sidebar__user--name
+        = current_user.name
+      .sidebar__user--btn
+        = link_to new_group_path do
+          %i.fa.fa-pencil-square-o
+        = link_to edit_user_registration_path do
+          %i.fa.fa-cog.fa-lx
+    .sidebar__groups-list
+      = render partial: "group", collection: @groups
